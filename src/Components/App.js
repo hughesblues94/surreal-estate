@@ -1,9 +1,10 @@
-import '../Styles/App.css';
+import '../Styles/app.css';
+import Navbar from './Navbar';
 
 function App() {
   return (
     <div className="App">
-      <h1>Surreal Estate</h1>
+      <Navbar />
     </div>
   );
 }

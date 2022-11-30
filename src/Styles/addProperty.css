@@ -1,0 +1,12 @@
+.add-property {
+  padding: 1rem;
+}
+
+.property-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.property-form-item {
+  padding: 1rem;
+}

@@ -1,26 +1,37 @@
 import React, { useState } from 'react';
-
 import '../Styles/addProperty.css';
+import axios from 'axios';
 
 const AddProperties = () => {
 
     const initialState = {
         fields: {
-            title: "",
+            title: "No title entered",
             city: "Manchester",
             type: "Flat",
-            bedrooms: "",
-            bathrooms: "",
-            email: "",
-            price: ""
+            bedrooms: "0",
+            bathrooms: "0",
+            email: "No e-mail entered",
+            price: "No price entered"
         }
     }
 
     const [fields, setFields] = useState(initialState.fields);
 
+    const url = 'http://localhost:3000/api/v1/PropertyListing'
+
+
     const handleAddProperty = (event) => {
         event.preventDefault()
         console.log(fields)
+        axios.post(url, fields)
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+
     }
 
     const handleFieldChange = (event) => {
@@ -29,7 +40,7 @@ const AddProperties = () => {
 
     return (
         <div className="add-property">
-            <h1>Add Property Page</h1>
+            <h1 className='page-title'>Add Property Page</h1>
 
             <form className='property-form' onSubmit={handleAddProperty}>
                 <label className="property-form-item" htmlFor='title'>

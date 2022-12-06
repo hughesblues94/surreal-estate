@@ -56,9 +56,7 @@ const AddProperties = () => {
             <h1 className='page-title'>Add Property Page</h1>
 
             <form className='property-form' onSubmit={handleAddProperty}>
-                {alert.message && (
-                    <Alert message={alert.message} success={alert.isSuccess} />
-                )}
+                <Alert message={alert.message} success={alert.isSuccess} />
                 <label className="property-form-item" htmlFor='title'>
                     Title
                     <input
